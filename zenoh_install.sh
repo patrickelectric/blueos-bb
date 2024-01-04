@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Immediately exit on errors
-set -e
+set -ex
 
 VERSION="0.10.0-rc"
 TOOLCHAIN="armv7-unknown-linux-gnueabihf"
@@ -22,5 +22,6 @@ for BINARY in "${BINARIES[@]}"; do
 done
 cd ${DOWNLOAD_FOLDER}
 unzip "*.zip"
+rm *.zip
 mv * /usr/bin
 cd - && rm -rf ${DOWNLOAD_FOLDER}
